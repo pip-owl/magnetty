@@ -1,4 +1,3 @@
-#!/usr/bin/env bun
 import WebTorrent from 'webtorrent';
 import * as fs from 'fs';
 import * as path from 'path';

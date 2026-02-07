@@ -1,6 +1,8 @@
 # 🧲 Magnetty
 
-A simple CLI torrent downloader built with [Bun](https://bun.sh) and [WebTorrent](https://webtorrent.io).
+A simple CLI torrent downloader built with [WebTorrent](https://webtorrent.io).
+
+Uses **Bun** as the package manager and **Node.js** to run (due to Bun `uv_timer_init` limitations).
 
 ## Features
 
@@ -12,7 +14,8 @@ A simple CLI torrent downloader built with [Bun](https://bun.sh) and [WebTorrent
 
 ## Requirements
 
-- [Bun](https://bun.sh) runtime (v1.0.0+)
+- [Node.js](https://nodejs.org) (v18+)
+- [Bun](https://bun.sh) (v1.0.0+) - for package management only
 
 ## Installation
 
@@ -20,7 +23,7 @@ A simple CLI torrent downloader built with [Bun](https://bun.sh) and [WebTorrent
 # Clone or download the project
 cd magnetty
 
-# Install dependencies
+# Install dependencies (using Bun as package manager)
 bun install
 ```
 
@@ -29,23 +32,23 @@ bun install
 ### Download via Magnet URI
 
 ```bash
-bun run index.ts "magnet:?xt=urn:btih:..."
+npm start "magnet:?xt=urn:btih:..."
+# or
+node --import=tsx index.ts "magnet:?xt=urn:btih:..."
 ```
 
 ### Download via .torrent File
 
 ```bash
-bun run index.ts ./path/to/file.torrent
+npm start ./path/to/file.torrent
+# or
+node --import=tsx index.ts ./path/to/file.torrent
 ```
 
-### Global Installation (Optional)
+### Development (with tsx)
 
 ```bash
-# Make it globally available
-bun link
-
-# Then use anywhere
-magnetty "magnet:?xt=urn:btih:..."
+npm run dev "magnet:?xt=urn:btih:..."
 ```
 
 ## Output
@@ -92,7 +95,6 @@ Downloads are saved to the `downloads/` folder by default (relative to the proje
 - **Network**: Requires an internet connection with BitTorrent protocol access
 - **Firewall**: Some networks may block BitTorrent traffic
 - **Seeding**: This tool downloads only; it does not seed after completion
-- **Node.js**: This tool is built for Bun and may not work with Node.js alone
 
 ## License
 
