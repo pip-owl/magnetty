@@ -1,0 +1,37 @@
+{
+  "name": "magnetty",
+  "version": "1.0.0",
+  "description": "A simple CLI torrent downloader using WebTorrent and Bun",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "magnetty": "./index.ts"
+  },
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "keywords": [
+    "torrent",
+    "bittorrent",
+    "magnet",
+    "download",
+    "cli",
+    "webtorrent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/webtorrent": "^0.110.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "webtorrent": "^2.8.5"
+  },
+  "trustedDependencies": [
+    "node-datachannel",
+    "utp-native"
+  ]
+}
