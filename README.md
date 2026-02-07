@@ -25,6 +25,9 @@ cd magnetty
 
 # Install dependencies (using Bun as package manager)
 bun install
+
+# Build the TypeScript
+npm run build
 ```
 
 ## Usage
@@ -34,7 +37,7 @@ bun install
 ```bash
 npm start "magnet:?xt=urn:btih:..."
 # or
-node --import=tsx index.ts "magnet:?xt=urn:btih:..."
+node dist/index.js "magnet:?xt=urn:btih:..."
 ```
 
 ### Download via .torrent File
@@ -42,10 +45,10 @@ node --import=tsx index.ts "magnet:?xt=urn:btih:..."
 ```bash
 npm start ./path/to/file.torrent
 # or
-node --import=tsx index.ts ./path/to/file.torrent
+node dist/index.js ./path/to/file.torrent
 ```
 
-### Development (with tsx)
+### Development (without building)
 
 ```bash
 npm run dev "magnet:?xt=urn:btih:..."

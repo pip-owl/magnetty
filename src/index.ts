@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import WebTorrent from 'webtorrent';
 import * as fs from 'fs';
 import * as path from 'path';
