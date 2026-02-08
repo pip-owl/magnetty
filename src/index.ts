@@ -78,13 +78,14 @@ async function downloadTorrent(input: string): Promise<void> {
           ? 0
           : Math.ceil(torrent.timeRemaining / 1000 / 60);
 
-        process.stdout.write(
-          `\r📊 Progress: ${progress}% | ` +
-            `⬇️ ${speed} | ` +
-            `👥 Peers: ${peers} | ` +
-            `💾 ${downloaded} / ${formatBytes(torrent.length)}` +
-            `${torrent.done ? "" : ` | ⏱️ ~${remaining}m remaining`}`
-        );
+        const line =
+          `📊 Progress: ${progress}% | ` +
+          `⬇️ ${speed} | ` +
+          `👥 Peers: ${peers} | ` +
+          `💾 ${downloaded} / ${formatBytes(torrent.length)}` +
+          `${torrent.done ? "" : ` | ⏱️ ~${remaining}m remaining`}`;
+
+        process.stdout.write(`\r${line.padEnd(80, " ")}`);
       }, 1000);
 
       torrent.on("done", () => {
