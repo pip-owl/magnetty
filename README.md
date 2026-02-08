@@ -15,19 +15,13 @@ Uses **Bun** as the package manager and **Node.js** to run (due to Bun `uv_timer
 ## Requirements
 
 - [Node.js](https://nodejs.org) (v18+)
-- [Bun](https://bun.sh) (v1.0.0+) - for package management only
 
 ## Installation
 
+No installation needed! Just run with npx:
+
 ```bash
-# Clone or download the project
-cd magnetty
-
-# Install dependencies (using Bun as package manager)
-bun install
-
-# Build the TypeScript
-npm run build
+npx magnetty@latest "magnet:?xt=urn:btih:..."
 ```
 
 ## Usage
@@ -35,23 +29,32 @@ npm run build
 ### Download via Magnet URI
 
 ```bash
-npm start "magnet:?xt=urn:btih:..."
-# or
-node dist/index.js "magnet:?xt=urn:btih:..."
+npx magnetty@latest "magnet:?xt=urn:btih:..."
 ```
 
 ### Download via .torrent File
 
 ```bash
-npm start ./path/to/file.torrent
-# or
-node dist/index.js ./path/to/file.torrent
+npx magnetty@latest ./path/to/file.torrent
 ```
 
-### Development (without building)
+## Development (Local)
+
+If you want to develop or modify:
 
 ```bash
-npm run dev "magnet:?xt=urn:btih:..."
+# Clone the repo
+git clone https://github.com/pip-owl/magnetty.git
+cd magnetty
+
+# Install dependencies (Bun as package manager)
+bun install
+
+# Build
+npm run build
+
+# Run locally
+npm start "magnet:?xt=urn:btih:..."
 ```
 
 ## Output
